@@ -1,0 +1,25 @@
+# GZ Aluminium Glass & PVC — versioni fillestar
+
+Ky është një prototip funksional i ndërfaqes Web/PWA me databazë lokale IndexedDB.
+
+## Çfarë përfshihet
+- Paneli kryesor.
+- Regjistrimi i projekteve dhe klientëve.
+- Regjistrimi individual i dritareve.
+- Parapamje skematike 2D dhe pamje konceptuale 3D.
+- Katalog materialesh me çmim blerjeje/shitjeje dhe parametra shufrash.
+- Eksport/import i backup-it JSON.
+- Ruajtje lokale në shfletues.
+
+## Si hapet
+Për testim lokal, hap një server statik në këtë dosje (p.sh. `python -m http.server 8000`) dhe vizito `http://localhost:8000`.
+Për instalim si PWA në iPhone duhet publikuar në një adresë HTTPS. Pastaj në Safari: Share → Add to Home Screen.
+
+## Kufizime të këtij versioni
+- Nuk ka ende llogaritje të sakta të konsumit të profileve, zbritjeve të xhamit apo aksesorëve.
+- Figuracioni 2D/3D është parapamje fillestare, jo vizatim teknik prodhimi.
+- Moduli i ofertave PDF nuk është implementuar ende.
+- Databaza është lokale për atë shfletues/pajisje; bëj backup rregullisht.
+
+## Faza e ardhshme
+Duhet të regjistrohen recetat reale të çdo sistemi (prerjet, përforcimet, listelat, zbritjet e xhamit, aksesorët dhe rregullat e hapjes), të verifikohen me prerje reale dhe pastaj të aktivizohen kalkulimet e prodhimit.

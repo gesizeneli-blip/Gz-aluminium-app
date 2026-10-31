@@ -1,0 +1,9 @@
+{
+  "name": "GZ Aluminium Glass & PVC",
+  "short_name": "GZ Aluminium",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f4f6f9",
+  "theme_color": "#14283f",
+  "description": "Menaxhimi i ofertave dhe materialeve GZ"
+}

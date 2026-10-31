@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#14283f">
+  <meta name="description" content="GZ Aluminium Glass & PVC - menaxhimi i ofertave dhe materialeve">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+  <title>GZ Aluminium Glass & PVC</title>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand"><div class="brand-mark">GZ</div><div><strong>GZ ALUMINIUM</strong><small>GLASS & PVC</small></div></div>
+      <div class="nav-label">MENYJA</div>
+      <button class="nav-item active" data-view="dashboard">▦ <span>Paneli kryesor</span></button>
+      <button class="nav-item" data-view="projects">▤ <span>Projektet</span></button>
+      <button class="nav-item" data-view="windows">▧ <span>Dritaret</span></button>
+      <button class="nav-item" data-view="materials">▣ <span>Materialet</span></button>
+      <button class="nav-item" data-view="quotes">▤ <span>Ofertat</span></button>
+      <button class="nav-item" data-view="backup">⇧ <span>Backup & cilësimet</span></button>
+      <div class="sidebar-foot"><span class="dot"></span> Ruajtje lokale aktive</div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="menu-btn" id="menuBtn" aria-label="Hap menynë">☰</button>
+        <div><div class="eyebrow">GZ WORKSPACE</div><div class="top-title" id="pageTitle">Paneli kryesor</div></div>
+        <div class="top-actions"><span class="local-pill">● Offline / Lokal</span><div class="avatar">GZ</div></div>
+      </header>
+
+      <section class="view active" id="view-dashboard">
+        <div class="welcome">
+          <div><div class="eyebrow light">MIRË SE ERDHE</div><h1>Mirë se vjen në GZ.</h1><p>Menaxho ofertat, dritaret dhe materialet nga një vend i vetëm.</p></div>
+          <button class="btn btn-light" data-go="windows">＋ Dritare e re</button>
+        </div>
+        <div class="stats">
+          <article class="stat-card"><span>Projekte</span><strong id="statProjects">0</strong><small>Projektet e regjistruara</small></article>
+          <article class="stat-card"><span>Dritare</span><strong id="statWindows">0</strong><small>Elementet e regjistruara</small></article>
+          <article class="stat-card"><span>Materiale</span><strong id="statMaterials">0</strong><small>Artikuj në katalog</small></article>
+          <article class="stat-card"><span>Oferta</span><strong id="statQuotes">0</strong><small>Oferta të krijuara</small></article>
+        </div>
+        <div class="content-grid">
+          <article class="panel"><div class="panel-head"><div><h2>Veprime të shpejta</h2><p>Fillo një punë të re</p></div></div>
+            <div class="quick-actions">
+              <button class="quick" data-go="projects"><b>＋</b><span><strong>Projekt i ri</strong><small>Hap dosjen e klientit</small></span><i>→</i></button>
+              <button class="quick" data-go="windows"><b>▧</b><span><strong>Regjistro dritare</strong><small>Përmasa dhe konfigurimi</small></span><i>→</i></button>
+              <button class="quick" data-go="materials"><b>▣</b><span><strong>Menaxho materialet</strong><small>Profile, xhama, aksesorë</small></span><i>→</i></button>
+            </div>
+          </article>
+          <article class="panel"><div class="panel-head"><div><h2>Projektet e fundit</h2><p>Aktiviteti yt</p></div><button class="text-btn" data-go="projects">Shiko të gjitha</button></div><div id="recentProjects" class="empty">Ende nuk ka projekte. Krijo projektin e parë.</div></article>
+        </div>
+        <div class="notice"><strong>Shënim teknik:</strong> llogaritjet e konsumit të profileve dhe zbritjet e xhamit do të aktivizohen pasi të regjistrohen recetat teknike të secilit sistem. Nuk do të përdorim zbritje të hamendësuara.</div>
+      </section>
+
+      <section class="view" id="view-projects">
+        <div class="section-head"><div><div class="eyebrow">MENAXHIMI</div><h1>Projektet</h1><p>Çdo klient dhe objekt ruhet në një dosje më vete.</p></div><button class="btn btn-primary" id="newProjectBtn">＋ Projekt i ri</button></div>
+        <div class="panel">
+          <div class="panel-head"><h2>Lista e projekteve</h2><input class="search" id="projectSearch" placeholder="Kërko klientin ose projektin…"></div>
+          <div id="projectsList" class="table-wrap"></div>
+        </div>
+        <div class="panel form-panel" id="projectFormPanel" hidden>
+          <div class="panel-head"><div><h2>Regjistro projekt</h2><p>Informacioni bazë i klientit</p></div><button class="icon-btn" id="closeProjectForm">✕</button></div>
+          <form id="projectForm" class="form-grid">
+            <label>Emri i klientit<input name="client" required placeholder="Emër dhe mbiemër"></label>
+            <label>Emri i projektit<input name="name" required placeholder="P.sh. Apartament Tiranë"></label>
+            <label>Telefoni<input name="phone" placeholder="+355…"></label>
+            <label>Email<input name="email" type="email" placeholder="Email i klientit"></label>
+            <label class="full">Adresa / Shënime<textarea name="notes" rows="2" placeholder="Adresa e objektit ose shënime"></textarea></label>
+            <div class="full form-actions"><button class="btn btn-primary" type="submit">Ruaj projektin</button></div>
+          </form>
+        </div>
+      </section>
+
+      <section class="view" id="view-windows">
+        <div class="section-head"><div><div class="eyebrow">KALKULATORI TEKNIK</div><h1>Dritare</h1><p>Regjistro çdo element individualisht dhe lidhe me projektin.</p></div></div>
+        <div class="content-grid window-layout">
+          <article class="panel">
+            <div class="panel-head"><div><h2>Regjistro element të ri</h2><p>Përmasat jepen në milimetra</p></div><span class="step-tag">01 / ELEMENTI</span></div>
+            <form id="windowForm" class="form-grid">
+              <label class="full">Projekti<select name="projectId" id="windowProject" required><option value="">Zgjidh projektin</option></select></label>
+              <label>Emërtimi<input name="label" required placeholder="P.sh. Dritarja sallonit"></label>
+              <label>Sistemi<select name="system" id="windowSystem"><option>TROCAL 76 MD</option><option>TROCAL 70</option><option>Kömmerling 76</option><option>Alumil S67</option><option>Alumil S560</option><option>WEISS 72</option></select></label>
+              <label>Gjerësia (mm)<input name="width" type="number" min="1" step="1" required placeholder="1500"></label>
+              <label>Lartësia (mm)<input name="height" type="number" min="1" step="1" required placeholder="1400"></label>
+              <label>Konfigurimi<select name="configuration"><option>Një kanat</option><option>Dy kanate</option><option>Fikse</option><option>Fikse + një kanat</option><option>Fikse + dy kanate</option><option>Derë</option><option>Rrëshqitëse</option></select></label>
+              <label>Hapja<select name="opening"><option>Normale</option><option>Antiribalt</option><option>Normale + antiribalt</option><option>Fikse</option><option>Rrëshqitëse</option></select></label>
+              <label class="full">Lloji i xhamit<select name="glass"><option>3+3 Triplex + 4 mm transparent + 3+3 Triplex termik</option><option>3+3 Triplex + 3+3 Triplex termik</option><option>Dopio xham termik</option><option>Triplex</option><option>Transparent</option><option>Do të përcaktohet</option></select></label>
+              <label class="full">Shënime<textarea name="notes" rows="2" placeholder="Ngjyra, drejtimi i hapjes, detaje të tjera…"></textarea></label>
+              <div class="full form-actions"><button class="btn btn-primary" type="submit">Ruaj dritaren</button></div>
+            </form>
+          </article>
+          <article class="panel preview-panel">
+            <div class="panel-head"><div><h2>Figuracioni</h2><p>Parapamje skematike e elementit</p></div></div>
+            <div class="preview-tabs"><button class="preview-tab active" data-preview="2d">2D Teknik</button><button class="preview-tab" data-preview="3d">Pamje 3D</button></div>
+            <div id="drawing" class="drawing-area"><svg viewBox="0 0 320 270" role="img" aria-label="Skicë dritareje"><line x1="65" y1="28" x2="255" y2="28" class="dim"/><text x="160" y="19" text-anchor="middle">1500 mm</text><line x1="278" y1="48" x2="278" y2="222" class="dim"/><text x="291" y="139" transform="rotate(90 291 139)" text-anchor="middle">1400 mm</text><rect x="70" y="38" width="180" height="184" class="frame"/><rect x="82" y="50" width="156" height="160" class="sash"/><line x1="160" y1="50" x2="160" y2="210" class="mullion"/><path d="M160 50 L160 210" class="thin"/></svg><div class="drawing-caption">Skemë paraprake – konfigurimi do të përditësohet sipas zgjedhjeve.</div></div>
+            <div class="calc-preview"><div><span>Sipërfaqja gjeometrike</span><strong id="areaPreview">2.10 m²</strong></div><div><span>Kosto / materialet</span><strong class="muted">Pas konfigurimit teknik</strong></div></div>
+          </article>
+        </div>
+        <div class="panel"><div class="panel-head"><h2>Dritaret e regjistruara</h2></div><div id="windowsList" class="table-wrap"></div></div>
+      </section>
+
+      <section class="view" id="view-materials">
+        <div class="section-head"><div><div class="eyebrow">ADMINISTRIMI</div><h1>Materialet</h1><p>Ti kontrollon emrat, çmimet dhe katalogun e materialeve.</p></div><button class="btn btn-primary" id="newMaterialBtn">＋ Shto material</button></div>
+        <div class="notice">Ndryshimet në katalog do të përdoren për llogaritjet e reja. Ofertat e ruajtura duhet të mbajnë çmimet historike të momentit kur u krijuan.</div>
+        <div class="panel"><div class="panel-head"><h2>Katalogu i materialeve</h2><input class="search" id="materialSearch" placeholder="Kërko materialin…"></div><div id="materialsList" class="table-wrap"></div></div>
+        <div class="panel form-panel" id="materialFormPanel" hidden>
+          <div class="panel-head"><div><h2 id="materialFormTitle">Shto material</h2><p>Regjistro artikullin dhe çmimin e blerjes</p></div><button class="icon-btn" id="closeMaterialForm">✕</button></div>
+          <form id="materialForm" class="form-grid">
+            <input type="hidden" name="id">
+            <label>Emri i materialit<input name="name" required placeholder="P.sh. Profil kornize"></label>
+            <label>Kategoria<select name="category"><option>Profil PVC</option><option>Profil alumin</option><option>Xham</option><option>Aksesor</option><option>Gominë</option><option>Material ndihmës</option></select></label>
+            <label>Kodi / Sistemi<input name="code" placeholder="P.sh. TROCAL 76 MD"></label>
+            <label>Njësia<select name="unit"><option>metër</option><option>copë</option><option>m²</option><option>shufër</option><option>set</option></select></label>
+            <label>Çmimi i blerjes (lek)<input name="cost" type="number" min="0" step="0.01" required placeholder="0"></label>
+            <label>Çmimi i shitjes (lek)<input name="sale" type="number" min="0" step="0.01" placeholder="0"></label>
+            <label>Gjatësia (mm)<input name="length" type="number" min="0" step="1" placeholder="P.sh. 6500"></label>
+            <label>Disku i prerjes (mm)<input name="kerf" type="number" min="0" step="0.1" placeholder="P.sh. 5"></label>
+            <div class="full form-actions"><button class="btn btn-primary" type="submit">Ruaj materialin</button></div>
+          </form>
+        </div>
+      </section>
+
+      <section class="view" id="view-quotes">
+        <div class="section-head"><div><div class="eyebrow">SHITJE</div><h1>Ofertat</h1><p>Ofertat do të lidhen me projektet dhe elementet e regjistruara.</p></div></div>
+        <div class="panel"><div class="empty"><div class="empty-icon">▤</div><strong>Moduli i ofertave është faza pasuese</strong><p>Do të shtojmë gjenerimin PDF me formatin GZ, çmimet, figuracionin dhe specifikimet teknike.</p></div></div>
+      </section>
+
+      <section class="view" id="view-backup">
+        <div class="section-head"><div><div class="eyebrow">SIGURIA E TË DHËNAVE</div><h1>Backup & cilësimet</h1><p>Databaza ruhet lokalisht në këtë shfletues dhe pajisje.</p></div></div>
+        <div class="content-grid">
+          <article class="panel"><div class="panel-head"><h2>Kopje rezervë</h2></div><p class="muted">Eksporto projektet, dritaret dhe materialet në një skedar JSON. Ruaje në Files ose në një pajisje tjetër.</p><button class="btn btn-primary" id="exportBtn">⇩ Eksporto backup</button></article>
+          <article class="panel"><div class="panel-head"><h2>Rikthe të dhënat</h2></div><p class="muted">Zgjidh një backup të krijuar më parë. Importi zëvendëson databazën aktuale.</p><input type="file" id="importFile" accept="application/json"><button class="btn btn-secondary" id="importBtn">⇧ Importo backup</button></article>
+        </div>
+        <div class="notice warning"><strong>Kujdes:</strong> nëse fshin të dhënat e faqes ose çinstalon aplikacionin, databaza lokale mund të humbasë. Eksporto backup rregullisht. Për përdorim në disa pajisje do të duhet sinkronizim, i cili nuk përfshihet në variantin lokal.</div>
+      </section>
+      <footer>GZ ALUMINIUM GLASS & PVC <span>Versioni fillestar · Databazë lokale</span></footer>
+    </main>
+  </div>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
